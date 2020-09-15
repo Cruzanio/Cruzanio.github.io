@@ -94,6 +94,5 @@
             var counterDisplay = document.getElementById('stage-counter')
             counterDisplay.innerHTML = 'Stage: ' + stageCounter
         };
-
     });
 })();

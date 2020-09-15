@@ -22,4 +22,4 @@
                 .then(data => {
                     return data
                 })
-        };
+        }

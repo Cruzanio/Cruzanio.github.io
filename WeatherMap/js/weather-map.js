@@ -8,7 +8,7 @@
         var lat = 29.424122
         var lon = -98.493629
 
-        mapboxgl.accessToken = MAPBOX_TOKEN2;
+        mapboxgl.accessToken = decoderRing(MAPBOX_TOKEN2);
         var map = new mapboxgl.Map({
             container: 'map',
             style: 'mapbox://styles/mapbox/satellite-streets-v11', // stylesheet location
@@ -23,7 +23,7 @@
         $('#cityName').html('San Antonio')
 
         function currentWeatherLoad() {
-            $.get("https://api.openweathermap.org/data/2.5/onecall?lat=" + lat + "&lon=" + lon + "&exclude=hourly,minutely&appid=" + OPEN_WEATHER_MAP_API + "&units=imperial"
+            $.get("https://api.openweathermap.org/data/2.5/onecall?lat=" + lat + "&lon=" + lon + "&exclude=hourly,minutely&appid=" + decoderRing(OPEN_WEATHER_MAP_API) + "&units=imperial"
             ).done(function (data) {
                     $('#weatherType').html(data.current.weather[0].main)
                     $('#degrees').html(Math.round(data.current.temp) + '&#176')
@@ -150,15 +150,14 @@
                 })
                 document.getElementById('NA').scrollIntoView()
             } else {
-                geocode(userInput.value, MAPBOX_TOKEN2)
+                geocode(userInput.value, decoderRing(MAPBOX_TOKEN2))
                     .then(function (result) {
                         lat = result[1]
                         lon = result[0]
-                        $.get("https://api.openweathermap.org/data/2.5/weather?lat=" + lat + "&lon=" + lon + "&exclude=hourly,minutely&appid=" + OPEN_WEATHER_MAP_API + "&units=imperial"
+                        $.get("https://api.openweathermap.org/data/2.5/weather?lat=" + lat + "&lon=" + lon + "&exclude=hourly,minutely&appid=" + decoderRing(OPEN_WEATHER_MAP_API) + "&units=imperial"
                         ).done(function (data) {
                             $('#cityName').html(data.name)
                             $('#update').html('Show Current Weather for: ' + data.name)
-                            console.log(data)
                         })
                         var LLObj = {lng: lon, lat: lat}
                         createMarker(LLObj)
@@ -175,7 +174,7 @@
                 .setDraggable(true)
             map.setCenter(LLObj);
             map.setZoom(8);
-            reverseGeocode(LLObj, MAPBOX_TOKEN2).then(function (data) {
+            reverseGeocode(LLObj, decoderRing(MAPBOX_TOKEN2)).then(function (data) {
                 var address = data.features[0].place_name
                 userMarker.setPopup(new mapboxgl.Popup()
                     .setHTML("<p style='color: black; text-align: center'>" + address + "</p>"))
@@ -187,12 +186,12 @@
                 lon = lngLat.lng
                 map.setCenter(lngLat)
                 map.setZoom(10)
-                reverseGeocode(lngLat, MAPBOX_TOKEN2).then(function (data) {
+                reverseGeocode(lngLat, decoderRing(MAPBOX_TOKEN2)).then(function (data) {
                     var address = data.features[0].place_name
                     userMarker.setPopup(new mapboxgl.Popup()
                         .setHTML("<p style='color: black; text-align: center'>" + address + "</p>"))
                 })
-                $.get("https://api.openweathermap.org/data/2.5/weather?lat=" + lat + "&lon=" + lon + "&exclude=hourly,minutely&appid=" + OPEN_WEATHER_MAP_API + "&units=imperial"
+                $.get("https://api.openweathermap.org/data/2.5/weather?lat=" + lat + "&lon=" + lon + "&exclude=hourly,minutely&appid=" + decoderRing(OPEN_WEATHER_MAP_API) + "&units=imperial"
                 ).done(function (data) {
                     $('#cityName').html(data.name)
                     $('#update').html('Show Current Weather for: ' + data.name)
