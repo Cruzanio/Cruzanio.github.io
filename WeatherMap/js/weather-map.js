@@ -1,16 +1,21 @@
 (function () {
     "use strict";
-    const RING_SHIFT = 3;
-
-    function decoderRing(str) {
-        var output = [];
-        var letters = str.split("");
-        letters.forEach(function(letter) {
-            output.push(String.fromCharCode(letter.charCodeAt(0) - RING_SHIFT));
-        });
-        return output.join("")
-    }
     $().ready(function () {
+
+        const RING_SHIFT = 3;
+
+        function decoderRing(str) {
+            var output = [];
+            var letters = str.split("");
+            letters.forEach(function(letter) {
+                output.push(String.fromCharCode(letter.charCodeAt(0) - RING_SHIFT));
+            });
+            return output.join("")
+        }
+
+        var MT = decoderRing(MAPBOX_TOKEN2)
+        var WT = decoderRing(OPEN_WEATHER_MAP_API)
+
 
         $('#NA').hide()
         $('.puppiness').hide()
@@ -18,7 +23,7 @@
         var lat = 29.424122
         var lon = -98.493629
 
-        mapboxgl.accessToken = decoderRing(MAPBOX_TOKEN2);
+        mapboxgl.accessToken = MT;
         var map = new mapboxgl.Map({
             container: 'map',
             style: 'mapbox://styles/mapbox/satellite-streets-v11', // stylesheet location
@@ -33,7 +38,7 @@
         $('#cityName').html('San Antonio')
 
         function currentWeatherLoad() {
-            $.get("https://api.openweathermap.org/data/2.5/onecall?lat=" + lat + "&lon=" + lon + "&exclude=hourly,minutely&appid=" + decoderRing(OPEN_WEATHER_MAP_API) + "&units=imperial"
+            $.get("https://api.openweathermap.org/data/2.5/onecall?lat=" + lat + "&lon=" + lon + "&exclude=hourly,minutely&appid=" + WT + "&units=imperial"
             ).done(function (data) {
                     $('#weatherType').html(data.current.weather[0].main)
                     $('#degrees').html(Math.round(data.current.temp) + '&#176')
@@ -104,7 +109,7 @@
 
         //Takes in the day from above and checks forecast array displaying info of matching day
         function newDay(day) {
-            $.get("https://api.openweathermap.org/data/2.5/onecall?lat=" + lat + "&lon=" + lon + "&exclude=hourly,minutely&appid=" + OPEN_WEATHER_MAP_API + "&units=imperial"
+            $.get("https://api.openweathermap.org/data/2.5/onecall?lat=" + lat + "&lon=" + lon + "&exclude=hourly,minutely&appid=" + WT + "&units=imperial"
             ).done(function (data) {
                 for (var i = 0; i <= data.daily.length - 1; i++) {
                     var unix = data.daily[i].dt * 1000
@@ -160,11 +165,11 @@
                 })
                 document.getElementById('NA').scrollIntoView()
             } else {
-                geocode(userInput.value, decoderRing(MAPBOX_TOKEN2))
+                geocode(userInput.value, MT)
                     .then(function (result) {
                         lat = result[1]
                         lon = result[0]
-                        $.get("https://api.openweathermap.org/data/2.5/weather?lat=" + lat + "&lon=" + lon + "&exclude=hourly,minutely&appid=" + decoderRing(OPEN_WEATHER_MAP_API) + "&units=imperial"
+                        $.get("https://api.openweathermap.org/data/2.5/weather?lat=" + lat + "&lon=" + lon + "&exclude=hourly,minutely&appid=" + WT + "&units=imperial"
                         ).done(function (data) {
                             $('#cityName').html(data.name)
                             $('#update').html('Show Current Weather for: ' + data.name)
@@ -184,7 +189,7 @@
                 .setDraggable(true)
             map.setCenter(LLObj);
             map.setZoom(8);
-            reverseGeocode(LLObj, decoderRing(MAPBOX_TOKEN2)).then(function (data) {
+            reverseGeocode(LLObj, MT).then(function (data) {
                 var address = data.features[0].place_name
                 userMarker.setPopup(new mapboxgl.Popup()
                     .setHTML("<p style='color: black; text-align: center'>" + address + "</p>"))
@@ -196,12 +201,12 @@
                 lon = lngLat.lng
                 map.setCenter(lngLat)
                 map.setZoom(10)
-                reverseGeocode(lngLat, decoderRing(MAPBOX_TOKEN2)).then(function (data) {
+                reverseGeocode(lngLat, MT).then(function (data) {
                     var address = data.features[0].place_name
                     userMarker.setPopup(new mapboxgl.Popup()
                         .setHTML("<p style='color: black; text-align: center'>" + address + "</p>"))
                 })
-                $.get("https://api.openweathermap.org/data/2.5/weather?lat=" + lat + "&lon=" + lon + "&exclude=hourly,minutely&appid=" + decoderRing(OPEN_WEATHER_MAP_API) + "&units=imperial"
+                $.get("https://api.openweathermap.org/data/2.5/weather?lat=" + lat + "&lon=" + lon + "&exclude=hourly,minutely&appid=" + WT + "&units=imperial"
                 ).done(function (data) {
                     $('#cityName').html(data.name)
                     $('#update').html('Show Current Weather for: ' + data.name)
