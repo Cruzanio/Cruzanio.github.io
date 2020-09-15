@@ -1,0 +1,161 @@
+html {
+    height: 100%;
+    overflow: hidden;
+    align-items: center;
+}
+
+body {
+    color: #fff;
+    overflow-x: hidden;
+    height: 100%;
+    background-image: linear-gradient(#81D4FA, #2196F3);
+    background-repeat: no-repeat;
+    overflow: no-display;
+}
+
+.card0 {
+    width: 95%;
+    box-shadow: 0px 0px 10px black;
+    border-radius: 20px;
+}
+
+.card1 {
+    padding: 30px 20px 30px 50px;
+    border-top-left-radius: 20px;
+    border-bottom-left-radius: 20px;
+}
+
+.image {
+    width: 300px;
+    height: 350px
+}
+
+.large-font {
+    font-size: 70px;
+    font-family: Arial
+}
+
+.fa-sun-o {
+    font-size: 22px
+}
+
+.card2 {
+    background-color: #607D8B;
+    padding: 0px 0px 40px 40px;
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
+}
+
+input {
+    background-color: #607D8B;
+    padding: 24px 0px 12px 0px !important;
+    width: 80%;
+    box-sizing: border-box;
+    border: none !important;
+    border-bottom: 1px solid #CFD8DC !important;
+    font-size: 16px !important;
+    color: #fff !important
+}
+
+input:focus {
+    -moz-box-shadow: none !important;
+    -webkit-box-shadow: none !important;
+    box-shadow: none !important;
+    border-bottom: 1px solid #fff !important;
+    outline-width: 0;
+    font-weight: 400
+}
+
+::placeholder {
+    color: #B0BEC5 !important;
+    opacity: 1
+}
+
+:-ms-input-placeholder {
+    color: #B0BEC5 !important
+}
+
+::-ms-input-placeholder {
+    color: #B0BEC5 !important
+}
+
+.fa-search {
+    color: white;
+    background-color: transparent;
+    font-size: 20px;
+    padding: 20px;
+    width: 20%;
+    cursor: pointer;
+    border-top-right-radius: 20px;
+    text-align: center;
+}
+
+.light-text {
+    color: #B0BEC5
+}
+
+.suggestion:hover {
+    color: #fff;
+    cursor: pointer
+}
+
+.line {
+    height: 1px;
+    background-color: #B0BEC5
+}
+
+@media screen and (max-width: 500px) {
+    .card1 {
+        padding-left: 26px
+    }
+}
+
+#map {
+    border-radius: 15px;
+    box-shadow: 0px 0px 10px 5px black;
+}
+
+.dayOfTheWeek p {
+    display: inline-block;
+    margin-bottom: 10px;
+}
+
+.dayOfTheWeek {
+    display: flex;
+    justify-content: space-between;
+}
+
+#bg {
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+#NA {
+    position: relative;
+    top: 0;
+    left: 0;
+}
+
+.tv {
+    width: 800px;
+    height: 500px;
+    position: relative;
+    top: 0;
+    left: 0;
+    border: 1px solid black;
+    border-radius: 5px;
+    box-shadow: 0px 0px 10px 5px black
+}
+
+.puppiness {
+    width: 600px;
+    height: 425px;
+    position: absolute;
+    top: 40px;
+    left: 90px;
+    object-fit: cover;
+    border-radius: 15px;
+    box-shadow: 0px 0px 10px 5px black;
+}
+
+
