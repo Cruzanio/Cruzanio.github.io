@@ -229,5 +229,16 @@
                     break;
             }
         }
+
+        const RING_SHIFT = 3;
+
+        const decoderRing = function (str) {
+            var output = [];
+            var letters = str.split("");
+            letters.forEach(function(letter) {
+                output.push(String.fromCharCode(letter.charCodeAt(0) - RING_SHIFT));
+            });
+            return output.join("")
+        }
     });
 })();
