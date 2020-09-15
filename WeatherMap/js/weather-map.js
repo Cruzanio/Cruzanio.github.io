@@ -1,9 +1,10 @@
 (function () {
     "use strict";
     $().ready(function () {
+
         const RING_SHIFT = 3;
 
-        const decoderRing = function (str) {
+        function decoderRing(str) {
             var output = [];
             var letters = str.split("");
             letters.forEach(function(letter) {
@@ -11,6 +12,7 @@
             });
             return output.join("")
         }
+
         $('#NA').hide()
         $('.puppiness').hide()
 
