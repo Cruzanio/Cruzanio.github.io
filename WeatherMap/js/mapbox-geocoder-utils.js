@@ -1,6 +1,4 @@
-(function () {
-    "use strict";
-    $().ready(function () {
+"use strict";
 
 //Geocoder
         function geocode(search, token) {
@@ -15,13 +13,6 @@
                 });
         }
 
-// geocode("Via Ippolito Nievo Nr 2, 33081, Aviano Italy", MAPBOX_TOKEN2)
-//     .then(function (result) {
-//         console.log('Geocode for New Risto Pizza results: ' + result);
-//         map.setCenter(result);
-//         map.setZoom(15);
-//     });
-
 //Reverse Geocode
         function reverseGeocode(coordinates, token) {
             var baseUrl = 'https://api.mapbox.com';
@@ -32,13 +23,3 @@
                     return data
                 })
         };
-    });
-})();
-// var kebabsLoc ={lng: 12.587187, lat: 46.070614}
-//
-// reverseGeocode(kebabsLoc, MAPBOX_TOKEN2)
-//     .then(function (result) {
-//         console.log("Did we find Buonissimo Kebabs? " + result)
-//     })
-
-//newline
