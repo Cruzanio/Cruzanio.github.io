@@ -32,8 +32,11 @@
             } else if (i % 5 === 0) {
                 $('#output').append('<li>' + i + ': Buzz' + '</li>')
                 // $('#output').html(i + ': Buzz')
-            } else {
-                $('#output').html('Enter Number Please')
+            } else if (isNaN($('#userInput').val())) {
+                $('#output').html('Please enter a valid number')
+            }
+            else {
+                $('#output').append('<li>' + i + '</li>')
             }
         }
     }
