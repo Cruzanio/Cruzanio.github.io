@@ -1,17 +1,16 @@
 (function () {
     "use strict";
+    const RING_SHIFT = 3;
+
+    function decoderRing(str) {
+        var output = [];
+        var letters = str.split("");
+        letters.forEach(function(letter) {
+            output.push(String.fromCharCode(letter.charCodeAt(0) - RING_SHIFT));
+        });
+        return output.join("")
+    }
     $().ready(function () {
-
-        const RING_SHIFT = 3;
-
-        function decoderRing(str) {
-            var output = [];
-            var letters = str.split("");
-            letters.forEach(function(letter) {
-                output.push(String.fromCharCode(letter.charCodeAt(0) - RING_SHIFT));
-            });
-            return output.join("")
-        }
 
         $('#NA').hide()
         $('.puppiness').hide()
