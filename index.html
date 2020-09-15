@@ -24,13 +24,13 @@
     function fizzbuzz(num) {
         for (var i = 1; i <= num; i++) {
             if (i % 15 === 0) {
-                $('#output').appendChild('<li>' + i + ': Fizzbuzz' + '</li>')
+                $('#output').append('<li>' + i + ': Fizzbuzz' + '</li>')
                 // $('#output').html(i + ': Fizzbuzz')
             } else if (i % 3 === 0) {
-                $('#output').appendChild('<li>' + i + ': Fizz' + '</li>')
+                $('#output').append('<li>' + i + ': Fizz' + '</li>')
                 // $('#output').html(i + ': Fizz')
             } else if (i % 5 === 0) {
-                $('#output').appendChild('<li>' + i + ': Buzz' + '</li>')
+                $('#output').append('<li>' + i + ': Buzz' + '</li>')
                 // $('#output').html(i + ': Buzz')
             } else {
                 $('#output').html('Enter Number Please')
