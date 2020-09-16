@@ -10,9 +10,7 @@
 
 //Starts the Game
 
-        window.onload = function () {
             document.getElementById('start-btn').addEventListener('click', randomColor)
-        }
 
 //Simon chooses a random color and stores it in simonsArray followed by the display of his choice
         function randomColor() {
