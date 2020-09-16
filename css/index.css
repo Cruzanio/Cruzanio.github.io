@@ -24,6 +24,7 @@
 body {
     color: white;
 }
+
 .navbar > a {
     color: white !important;
 }
@@ -31,3 +32,30 @@ body {
 .navbar-toggler {
     color: white !important;
 }
+
+.duckT {
+    height: 40px;
+    width: 50px;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+h1 {
+    font-family: 'Fredericka the Great', cursive;
+}
+
+.border1 {
+    border: 1px solid red;
+    margin-top: 2em;
+}
+.cards {
+}
+.duckP {
+    height: 200px;
+    width: 200px;
+    float: left;
+}
+h2 {
+    float: right;
+}
+
