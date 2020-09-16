@@ -29,6 +29,10 @@
     color: white !important;
 }
 
+#navbar {
+    background-color: black;
+}
+
 .sticky {
     position: fixed;
     top: 0;
