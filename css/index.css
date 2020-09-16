@@ -13,6 +13,9 @@
     left: 0;
     z-index: -1;
 }
+body {
+    color: white;
+}
 
 @media screen and (max-width: 1024px) { /* Specific to this particular image */
     img.bg {
@@ -55,13 +58,17 @@ h1, h4 {
 .border1 {
     border: 1px solid red;
     margin-top: 2em;
-    background-color: #999999;
 }
 
 .duckP {
     height: 200px;
     width: 200px;
     float: left;
+}
+
+.dep {
+   height: 400px;
+    width: 500px;
 }
 
 h2 {
