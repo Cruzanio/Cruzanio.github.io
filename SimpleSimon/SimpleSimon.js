@@ -12,6 +12,7 @@
 
             // document.getElementById('start-btn').addEventListener('click', randomColor)
             $('#start-btn').click(randomColor)
+
 //Simon chooses a random color and stores it in simonsArray followed by the display of his choice
         function randomColor() {
             var randomColor = squares[Math.floor(Math.random() * squares.length)];
