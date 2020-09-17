@@ -56,19 +56,24 @@ h1, h4 {
 }
 
 .border1 {
-    border: 1px solid red;
-    margin-top: 2em;
+    /*border: 1px solid red;*/
+    margin-top: 5em;
 }
 
 .duckP {
     height: 200px;
     width: 200px;
-    float: left;
 }
 
 .dep {
-   height: 400px;
+   height: 300px;
     width: 450px;
+}
+
+.arrow {
+    height: 140px;
+    width: 150px;
+    margin: 2em 1em 0 1em;
 }
 
 h2 {
