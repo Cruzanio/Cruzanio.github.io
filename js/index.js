@@ -1,6 +1,9 @@
 (function () {
     "use strict";
     $().ready(function () {
+
+        $('#aboutMe').hide()
+
         // When the user scrolls the page, execute myFunction
         window.onscroll = function() {stickyNav()};
 
