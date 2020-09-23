@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Simple Simon</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="SimpleSimon.css">
+</head>
+<body>
+
+
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+        crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
+        integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
+        crossorigin="anonymous"></script>
+<script src="SimpleSimon.js"></script>
+
+<header>
+    <div class="overlay"></div>
+    <video playsinline="playsinline" autoplay="paused" loop muted >
+        <source src="SpaceVideo2.mp4">
+    </video>
+    <div class="container h-100">
+        <div class="d-flex h-100 text-center align-items-center">
+            <div class="w-100 text-white">
+                <main class="container" id="background">
+                    <h1 class="row justify-content-center">-Simple Simon-</h1>
+                    <article class="container justify-content-center">
+                        <div class="row justify-content-center">
+                            <button type="button" id="red" class="colorButton my-2 mx-1"></button>
+                            <button type="button" id="green" class="colorButton my-2 mx-1"></button>
+                        </div>
+                        <div class="row justify-content-center">
+                            <button type="button" id="blue" class="colorButton my-2 mx-1"></button>
+                            <button type="button" id="yellow" class="colorButton my-2 mx-1"></button>
+                        </div>
+                    </article>
+                    <h3 class="row justify-content-center mt-3">Press Start to begin.</h3>
+                    <h4  class="row justify-content-center" id="stage-counter"></h4>
+                    <div class="row justify-content-center">
+                        <button  type="button" id="start-btn">Start</button>
+                    </div>
+                </main>
+            </div>
+        </div>
+    </div>
+</header>
+
+
+</body>
+</html>

@@ -2,17 +2,20 @@ html {
     box-sizing: border-box;
     height: 100%;
 }
-
+@font-face {
+    font-family: SpaceFont;
+    src: url("SpaceFont2.ttf");
+}
 body {
     height: 100%;
 }
-.main-container {
-    height: 100%;
-}
+/*#background {*/
+/*}*/
+
 .colorButton {
     height: 10em;
     width: 10em;
-    opacity: 30%;
+    opacity: 50%;
     padding: 15px 25px;
     cursor: pointer;
     outline: none;
@@ -47,46 +50,58 @@ button:focus {outline:0;}
 }
 
 .container {
-    width: 50%
-}
-
-.outer-square {
-    border: .5em solid lightgrey;
-    width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.r-g {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 100%;
-    margin-left: auto;
-}
-.b-y {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 100%;
-    margin-right: auto;
-
-}
-
-.main-container {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    height: 100%;
-    width: 100%;
-    margin: 0;
-
+    font-family: SpaceFont;
+    color: white;
 }
 
 h1 {
     text-align: center;
 }
 
-/*hardcode size*/
+header {
+    position: relative;
+    background-color: black;
+    height: 100vh;
+    min-height: 25rem;
+    width: 100%;
+    overflow: hidden;
+}
+
+header video {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    z-index: 0;
+    -ms-transform: translateX(-50%) translateY(-50%);
+    -moz-transform: translateX(-50%) translateY(-50%);
+    -webkit-transform: translateX(-50%) translateY(-50%);
+    transform: translateX(-50%) translateY(-50%);
+}
+
+header .container {
+    position: relative;
+    z-index: 2;
+    text-shadow: 10px 10px 20px 20px black;
+}
+
+header .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    z-index: 1;
+}
+
+@media (pointer: coarse) and (hover: none) {
+    header {
+        background: url('star-bg.jpg') black no-repeat center center scroll;
+    }
+    header video {
+        display: none;
+    }
+}
