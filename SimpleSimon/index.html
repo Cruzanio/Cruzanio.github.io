@@ -8,8 +8,6 @@
     <link rel="stylesheet" href="SimpleSimon.css">
 </head>
 <body>
-
-
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
         integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
         crossorigin="anonymous"></script>
@@ -21,9 +19,10 @@
         crossorigin="anonymous"></script>
 <script src="SimpleSimon.js"></script>
 
+<audio id="player" loop src="themeMusic.wav"></audio>
 <header>
     <div class="overlay"></div>
-    <video playsinline="playsinline" autoplay="paused" loop muted >
+    <video playsinline="playsinline" autoplay="paused" loop muted>
         <source src="SpaceVideo2.mp4">
     </video>
     <div class="container h-100">
@@ -33,18 +32,18 @@
                     <h1 class="row justify-content-center">-Simple Simon-</h1>
                     <article class="container justify-content-center">
                         <div class="row justify-content-center">
-                            <button type="button" id="red" class="colorButton my-2 mx-1"></button>
-                            <button type="button" id="green" class="colorButton my-2 mx-1"></button>
+                            <button type="button" id="red" class="colorButton my-2 mr-2"></button>
+                            <button type="button" id="green" class="colorButton my-2 ml-2"></button>
                         </div>
                         <div class="row justify-content-center">
-                            <button type="button" id="blue" class="colorButton my-2 mx-1"></button>
-                            <button type="button" id="yellow" class="colorButton my-2 mx-1"></button>
+                            <button type="button" id="blue" class="colorButton my-2 mr-2"></button>
+                            <button type="button" id="yellow" class="colorButton my-2 ml-2"></button>
                         </div>
                     </article>
-                    <h3 class="row justify-content-center mt-3">Press Start to begin.</h3>
-                    <h4  class="row justify-content-center" id="stage-counter"></h4>
+                    <h3 class="row justify-content-center mt-3" id="pressStart">Press Start to begin.</h3>
+                    <h4 class="row justify-content-center mt-3" id="stage-counter"></h4>
                     <div class="row justify-content-center">
-                        <button  type="button" id="start-btn">Start</button>
+                        <button type="button" id="start-btn">Start</button>
                     </div>
                 </main>
             </div>
