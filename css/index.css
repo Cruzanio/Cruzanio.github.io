@@ -241,3 +241,7 @@ footer {
     /*color: darkorange !important;*/
     border-radius: 20px;
 }
+
+.shoeprint-color {
+    filter: invert(38%) sepia(73%) saturate(417%) hue-rotate(7deg) brightness(93%) contrast(20%);
+}
