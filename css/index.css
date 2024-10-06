@@ -114,6 +114,7 @@ h4 {
 }
 
 .shoeprints-img {
+    filter: invert(38%) sepia(73%) saturate(417%) hue-rotate(7deg) brightness(93%) contrast(20%);
     transform: rotate(180deg);
     height: 100px;
     width: 70px;
@@ -240,8 +241,4 @@ footer {
     background-color: #555555 !important;
     /*color: darkorange !important;*/
     border-radius: 20px;
-}
-
-.shoeprint-color {
-    filter: invert(38%) sepia(73%) saturate(417%) hue-rotate(7deg) brightness(93%) contrast(20%);
 }
